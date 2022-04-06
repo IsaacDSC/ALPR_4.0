@@ -1,8 +1,7 @@
+from opencv import (capture, stream, train)
 import cv2
-from opencv import (capture,stream,train)
 
 camera = stream()
-
 
 while(1):
     ret, frame = camera.read()

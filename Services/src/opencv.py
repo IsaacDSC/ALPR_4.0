@@ -8,11 +8,11 @@ def stream():
 
 
 def capture(frame):
-    anality()
     path_images="src/public/images/test_%s.png"%(datetime.now())
     grayFrame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     (thresh, blackAndWhiteFrame) = cv2.threshold(grayFrame, 127, 255, cv2.THRESH_BINARY)
 
+    #anality(grayFrame)
     return cv2.imwrite(path_images, blackAndWhiteFrame)
 
 
