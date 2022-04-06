@@ -1,13 +1,445 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="pt-br">
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>AlPR System</title>
+  <link rel="stylesheet" href="./vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="./vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="./css/vertical-layout-dark/style.css">
+  <link rel="shortcut icon" href="./images/favicon.png" />
+  <link rel="stylesheet" href="./vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="./vendors/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./vendors/jquery-bar-rating/bars-1to10.css">
+  <link rel="stylesheet" href="./vendors/jquery-bar-rating/bars-horizontal.css">
+  <link rel="stylesheet" href="./vendors/jquery-bar-rating/bars-movie.css">
+  <link rel="stylesheet" href="./vendors/jquery-bar-rating/bars-pill.css">
+  <link rel="stylesheet" href="./vendors/jquery-bar-rating/bars-reversed.css">
+  <link rel="stylesheet" href="./vendors/jquery-bar-rating/bars-square.css">
+  <link rel="stylesheet" href="./vendors/jquery-bar-rating/bootstrap-stars.css">
+  <link rel="stylesheet" href="./vendors/jquery-bar-rating/css-stars.css">
+  <link rel="stylesheet" href="./vendors/jquery-bar-rating/examples.css">
+  <link rel="stylesheet" href="./vendors/jquery-bar-rating/fontawesome-stars-o.css">
+  <link rel="stylesheet" href="./vendors/jquery-bar-rating/fontawesome-stars.css">
+  <link rel="stylesheet" href="./vendors/jquery-asColorPicker/css/asColorPicker.min.css">
+  <link rel="stylesheet" href="./vendors/x-editable/bootstrap-editable.css">
+  <link rel="stylesheet" href="./vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="./vendors/dropify/dropify.min.css">
+  <link rel="stylesheet" href="./vendors/jquery-file-upload/uploadfile.css">
+  <link rel="stylesheet" href="./vendors/jquery-tags-input/jquery.tagsinput.min.css">
+  <link rel="stylesheet" href="./vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="./vendors/dropzone/dropzone.css">
+  <link rel="stylesheet" href="./vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="./vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html --> 
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-between">
+          <h1>ALPR System</h1>
+        </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+        <div class="d-none d-lg-flex">
+          <h1>Sistema ALPR desenvolvido para Estacionamentos</h1>
+        </div>
+        <h5>Desenvolvido por: João pedro Thomaz de Paula</h5>
+      </div>
+    </nav> 
+    <!-- partial -->
+
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#config" data-whatever="@getbootstrap">
+              <span class="menu-title">Configuração</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="d-xl-flex justify-content-between align-items-center mb-4 pb-2">
+            <div class="text-light">
+              <h2 class="mb-1 font-weight-bold">Bem Vindo</h2>
+              <p class="text-small mb-0">Projeto desenvolvido para fins Acadêmicos</p>
+            </div>
+          </div>
+
+         
+          <div class="row">
+            <div class="col-sm-3 grid-margin stretch-card">
+              <div class="card bg-primary text-white text-center">
+                <div class="card-body">
+                  <h1 class="font-weight-bold mb-4 pb-2 pt-4">Veículos Cadastrados</h1>
+                  <h2 class="font-weight-bold display-3 mt-4 mb-4">10</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 grid-margin stretch-card">
+              <div class="card bg-primary text-white text-center">
+                <div class="card-body">
+                  <h1 class="font-weight-bold mb-4 pb-2 pt-4">Total de Vagas</h1>
+                  <h2 class="font-weight-bold display-3 mt-4 mb-4">40</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3  grid-margin stretch-card">
+              <div class="card text-center">
+                <div class="card-body">
+                  <div class="plan-icon-circle pt-3">
+                  </div>
+                  <h1 class="font-weight-bold mb-2 text-light">30</h1>
+                  <p class="text-muted mb-3">Vagas Disponíveis</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3  grid-margin stretch-card">
+              <div class="card text-center">
+                <div class="card-body">
+                  <div class="plan-icon-circle pt-3">
+                  </div>
+                  <h1 class="font-weight-bold mb-2 text-light">10</h1>
+                  <p class="text-muted mb-3">Vagas Ocupadas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">N° de veículos por Mês</h4>
+                  <canvas id="areaChart"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">N° de veículos por Dia</h4>
+                  <canvas id="lineChart"></canvas>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- modal Entrada -->
+          <div class="modal fade" id="EntradaVeiculo" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="ModalLabel">Entrada de Veículo</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Placa:</label>
+                      <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="modelo" class="col-form-label">Modelo:</label>
+                      <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="hor" class="col-form-label">Horário de Entrada:</label>
+                      <div class="input-group date" id="timepicker-example" data-target-input="nearest">
+                        <div class="input-group" data-target="#timepicker-example" data-toggle="datetimepicker">
+                          <input type="text" class="form-control datetimepicker-input" data-target="#timepicker-example"./>
+                          <div class="input-group-addon input-group-append"><i class="mdi mdi-clock input-group-text"></i></div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success">CONFIRMAR</button>
+                  <button type="button" class="btn btn-light" data-dismiss="modal">FECHAR</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fim modal -->
+          <!-- modal Saída -->
+          <div class="modal fade" id="SaidaVeiculo" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="ModalLabel">Saída de Veículo</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Placa:</label>
+                      <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="modelo" class="col-form-label">Modelo:</label>
+                      <output type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="hor" class="col-form-label">Horário de Entrada:</label>
+                      <div class="input-group date" id="timepicker-example" data-target-input="nearest">
+                        <div class="input-group" data-target="#timepicker-example" data-toggle="datetimepicker">
+                          <output type="text" class="form-control datetimepicker-input" data-target="#timepicker-example"./>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="hor" class="col-form-label">Horário de Saída:</label>
+                      <div class="input-group date" id="timepicker-example2" data-target-input="nearest">
+                        <div class="input-group" data-target="#timepicker-example2" data-toggle="datetimepicker">
+                          <input type="text" class="form-control datetimepicker-input" data-target="#timepicker-example2"./>
+                          <div class="input-group-addon input-group-append"><i class="mdi mdi-clock input-group-text"></i></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="valor" class="col-form-label">Valor a Receber:</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text bg-primary text-white">R$</span>
+                        </div>
+                        <output type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <div class="input-group-append">
+                          <span class="input-group-text">.00</span>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success">CONFIRMAR</button>
+                  <button type="button" class="btn btn-light" data-dismiss="modal">FECHAR</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fim modal -->
+          
+          <div class="row">
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Ações</h4>
+                  <div class="template-demo">
+                    <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#EntradaVeiculo">Entrada de Veículo</button>
+                    <button type="button" class="btn btn-dark btn-lg btn-block" data-toggle="modal" data-target="#SaidaVeiculo" data-whatever="@fat">Saída de Veículo</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                  <div id ="camera">
+                    <video autoplay id="video"></video>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-wrapper">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Lista de Carros</h4>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="table-responsive">
+                        <table id="order-listing" class="table">
+                          <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Placa</th>
+                                <th>Modelo</th>
+                                <th>Entrada</th>
+                                <th>Saída</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                               
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>XXX-4997</td>
+                                <td>FIAT UNO VIVACE-PRATA</td>
+                                <td>01/01/2001 13:13:13</td>
+                                <td>X</td>
+                                <td>X</td>
+                                <td>
+                                  <label class="badge badge-danger">Pendente</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>XXX-5598</td>
+                                <td>GOL G4-PRETO</td>
+                                <td>01/01/2001 13:13:13</td>
+                                <td>01/01/2001 16:30:30</td>
+                                <td>R$10.00</td>
+                                <td>
+                                  <label class="badge badge-success">Fechado</label>
+                                </td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022 <a target="_blank">JPTHP</a>. All rights reserved. Terms of use | Privacy Policy</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Projeto com fins acadêmicos</span>
+          </div>
+        </footer>
+        <!-- modal config -->
+        <div class="modal fade" id="config" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="ModalLabel">Configuração</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Nome Estabelecimento: </label>
+                      <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                    <label for="valor" class="col-form-label">Valor por hora:</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white">R$</span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                      <div class="input-group-append">
+                        <span class="input-group-text">.00</span>
+                      </div>
+                    </div>
+                    </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect3">HORA FRACIONADA</label>
+                        <select class="form-control form-control-sm" id="exampleFormControlSelect3">
+                          <option>SIM</option>
+                          <option>NAO</option>
+                        </select>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success">CONFIRMAR</button>
+                <button type="button" class="btn btn-light" data-dismiss="modal">FECHAR</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fim modal -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- base:js -->
+  <script src="./vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="./js/off-canvas.js"></script>
+  <script src="./js/hoverable-collapse.js"></script>
+  <script src="./js/template.js"></script>
+  <script src="./js/settings.js"></script>
+  <script src="./js/todolist.js"></script>
+  <script src="./js/modal-demo.js"></script>
+  <!-- endinject -->
+  <!-- plugin js for this page -->
+  <script>
+    const video = document.querySelector('#video')
+    navigator.mediaDevices.getUserMedia({
+            video: true
+        })
+        .then(function(mediaStream) {
+            video.srcObject = mediaStream;
+            video.play();
+        })
+  </script>
+  <script type="module" src="./src/main.jsx"></script>
+  <script src="./vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="./vendors/flot/jquery.flot.js"></script>
+  <script src="./vendors/flot/jquery.flot.resize.js"></script>
+  <script src="./vendors/chart.js/Chart.min.js"></script>
+  <script src="./js/chart.js"></script>
+  <script src="./js/formpickers.js"></script>
+  <script src="./js/form-addons.js"></script>
+  <script src="./js/x-editable.js"></script>
+  <script src="./js/dropify.js"></script>
+  <script src="./js/dropzone.js"></script>
+  <script src="./js/jquery-file-upload.js"></script>
+  <script src="./js/form-repeater.js"></script>
+
+  <!-- End plugin js for this page -->
+  <script src="./vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="./vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <script src="./js/data-table.js"></script>
+  <script src="./js/form-addons.js"></script>
+  <script src="./js/x-editable.js"></script>
+  <script src="./js/jquery-file-upload.js"></script>
+  <script src="./js/form-repeater.js"></script>
+  <script src="./js/inputmask.js"></script>
+  <script src="./vendors/jquery-bar-rating/jquery.barrating.min.js"></script>
+  <script src="./vendors/jquery-asColor/jquery-asColor.min.js"></script>
+  <script src="./vendors/jquery-asGradient/jquery-asGradient.min.js"></script>
+  <script src="./vendors/jquery-asColorPicker/jquery-asColorPicker.min.js"></script>
+  <script src="./vendors/x-editable/bootstrap-editable.min.js"></script>
+  <script src="./vendors/moment/moment.min.js"></script>
+  <script src="./vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.js"></script>
+  <script src="./vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="./vendors/dropify/dropify.min.js"></script>
+  <script src="./vendors/jquery-file-upload/jquery.uploadfile.min.js"></script>
+  <script src="./vendors/jquery-tags-input/jquery.tagsinput.min.js"></script>
+  <script src="./vendors/dropzone/dropzone.js"></script>
+  <script src="./vendors/jquery.repeater/jquery.repeater.min.js"></script>
+  <script src="./vendors/inputmask/jquery.inputmask.bundle.js"></script>
+  <!-- Custom js for this page-->
+  <script src="./js/chart.flot.sampledata.js"></script>
+  <script src="./js/dashboard.sampledata.js"></script>
+  <script src="./vendors/patternomaly/patternomaly.js"></script>
+  <script src="./js/dashboard.js"></script>
+  <script src="./js/file-upload.js"></script>
+  <script src="./js/iCheck.html"></script>
+  <script src="./js/typeahead.js"></script>
+  <script src="./js/select2.js"></script>
+  <script src="./vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="./vendors/select2/select2.min.js"></script>
+  <!-- End custom js for this page-->
+</body>
 </html>
+
