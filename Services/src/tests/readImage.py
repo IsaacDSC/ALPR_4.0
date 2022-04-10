@@ -17,8 +17,6 @@ bfilter = cv2.bilateralFilter(gray, 11, 17, 17) #Noise reduction
 edged = cv2.Canny(bfilter, 30, 200) #Edge detection
 plt.imshow(cv2.cvtColor(edged, cv2.COLOR_BGR2RGB))
 
-# cv2.imwrite(path_images, edged)
-
 keypoints = cv2.findContours(
     edged.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 contours = imutils.grab_contours(keypoints)
