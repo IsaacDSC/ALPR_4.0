@@ -6,7 +6,7 @@ import numpy as np
 import imutils
 
 
-path_images = "src/public/images/test_%s.png" % (datetime.now())
+path_save_images = "src/public/images/test_%s.png" % (datetime.now())
 
 
 img = cv2.imread('src/public/simulate/car01.png')
