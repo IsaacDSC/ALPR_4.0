@@ -8,9 +8,10 @@ def stream():
     return camera
 
 def capture(frame):
-    path_images="public/images/test_%s.png"%(datetime.now())
-    image_test = cv2.imread("public/images/simulate/car01.png")
-    # plate = analytics(image_test)
+    path_images="src/public/images/test_%s.png"%(datetime.now())
+    #image_test = cv2.imread("src/public/simulate/car01.png")
+    image_test = cv2.imread("src/public/img_plate_br/HPM9362.jpg")
+    plate = analytics(image_test)
     # registerPlate(plate)
     return cv2.imwrite(path_images, image_test)
 
@@ -20,3 +21,4 @@ def train(frame):
     (thresh, blackAndWhiteFrame) = cv2.threshold(grayFrame, 127, 255, cv2.THRESH_BINARY)
 
     return cv2.imwrite(path_train,blackAndWhiteFrame)
+

@@ -21,14 +21,7 @@ def countFrames(frame):
         frame.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     contours = imutils.grab_contours(keypoints)
     contours = sorted(contours, key=cv2.contourArea, reverse=True)[:10]
-
-    location = None
-    for contour in contours:
-        approx = cv2.approxPolyDP(contour, 10, True)
-        if len(approx) == 4:
-            location = approx
-        break
-    return location
+    return contours
 
 
 def recortFrame(gray, mask):

@@ -1,3 +1,4 @@
+import cv2
 from analytics.execute import (
     convertGray,
     convertMonochromatic,
@@ -6,17 +7,27 @@ from analytics.execute import (
     recortFrame,
     plateMonochromatic,
     processText,
-    removeExpressions
+    removeExpressions,
 )
 
-
-def analytics(frame):
-    gray = convertGray(frame)
+def analytics(img):
+    gray = convertGray(img)
     monochromatic = convertMonochromatic(gray)
-    location = countFrames(monochromatic)
-    blackbackground, mask = defineBackGroundBlack(monochromatic, frame, location).values()
-    plate_img = recortFrame(blackbackground,mask)
+    contours = countFrames(monochromatic)
+
+    location = None
+    for contour in contours:
+        approx = cv2.approxPolyDP(contour, 10, True)
+        if len(approx) == 4:
+            location = approx
+            break
+
+    blackbackground, mask = defineBackGroundBlack(
+        monochromatic, img, location).values()
+    plate_img = recortFrame(gray, mask)
     monoPlate = plateMonochromatic(plate_img)
     readText = processText(monoPlate)
     text = removeExpressions(readText)
+    print(text)
+
     return text
